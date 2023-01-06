@@ -27,6 +27,8 @@ A todo list example app built using Ember.js and Phoenix.
 
    `mix ecto.create`
 
+   `mix ecto.migrate`
+
 4. Start the backend:
 
    `mix phx.server`

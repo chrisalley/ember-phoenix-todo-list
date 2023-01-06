@@ -24,6 +24,13 @@ defmodule BackendWeb.Router do
   # scope "/api", BackendWeb do
   #   pipe_through :api
   # end
+  scope "/api", BackendWeb.Api, as: :api do
+    pipe_through :api
+
+    scope "/v1", V1, as: :v1 do
+      resources "/todos",  TodoController
+    end
+  end
 
   # Enables LiveDashboard only for development
   #
