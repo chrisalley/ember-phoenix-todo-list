@@ -45,6 +45,10 @@ defmodule BackendWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
+
+  # Accept requests from Ember.js frontend in development environment:
+  plug Corsica, origins: "http://localhost:4200"
+
   plug Plug.Session, @session_options
   plug BackendWeb.Router
 end

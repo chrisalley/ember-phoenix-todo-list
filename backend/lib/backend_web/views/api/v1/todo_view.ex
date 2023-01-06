@@ -6,6 +6,10 @@ defmodule BackendWeb.Api.V1.TodoView do
   end
 
   def render("todo.json", %{todo: todo}) do
-    %{id: todo.id, task: todo.task, completed: todo.completed}
+    %{
+      type: "todos",
+      id: todo.id,
+      attributes: %{ task: todo.task, completed: todo.completed }
+    }
   end
 end
