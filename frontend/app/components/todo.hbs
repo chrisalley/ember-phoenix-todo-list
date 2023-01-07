@@ -1,2 +1,7 @@
-<input type='checkbox' checked={{@todo.completed}} />
-<label for='todo'>{{@todo.task}}</label>
+<Input
+  id='todo-{{@todo.id}}'
+  @type='checkbox'
+  @checked={{@todo.completed}}
+  {{on 'input' this.toggleTodo}}
+/>
+<label for='todo-{{@todo.id}}'>{{@todo.task}}</label>
