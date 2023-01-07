@@ -5,7 +5,8 @@ defmodule Backend.Todos do
   alias Backend.Todos.Todo
 
   def list_todos do
-    Repo.all(Todo)
+    query = from t in Todo, order_by: :inserted_at
+    Repo.all(query)
   end
 
   def get_todo!(id), do: Repo.get!(Todo, id)
