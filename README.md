@@ -5,9 +5,10 @@ A todo list example app built using Ember.js and Phoenix.
 ## Prerequisties:
 
 - Git
-- Postgres
 - Node.js
 - Elixir
+- Postgres
+- Chrome/Chromium
 
 ## Setup Instructions
 
@@ -48,3 +49,25 @@ A todo list example app built using Ember.js and Phoenix.
    `npm start`
 
 8. Confirm that the Ember app is running at `http://localhost:4200`
+
+## Running End-to-End Tests
+
+1. Ensure that both the frontend and backend are running at their respective
+   URLs: `http://localhost:4200` and `http://localhost:4000`:
+
+2. Change into e2e directory and install dependencies if required:
+
+   `cd e2e`
+
+   `npm install`
+
+3. Launch Cypress:
+
+   `npm run cypress:open`
+
+4. In the Cypress GUI:
+
+   - Click on "E2E Testing"
+   - Click on "Chrome" (or "Chromium")
+   - Click on "Start E2E Testing in Chrome"
+   - Click on the particular `.cy.js` file that you wish to run.
