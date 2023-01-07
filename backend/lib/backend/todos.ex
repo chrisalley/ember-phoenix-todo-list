@@ -22,4 +22,8 @@ defmodule Backend.Todos do
     |> Todo.changeset(attrs)
     |> Repo.update()
   end
+
+  def delete_todo(%Todo{} = todo) do
+    Repo.delete(todo)
+  end
 end

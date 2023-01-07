@@ -16,4 +16,11 @@ export default class TodoComponent extends Component {
       });
     }
   }
+
+  @action
+  deleteTodo(event) {
+    event.preventDefault();
+    const todo = this.store.peekRecord('todo', this.args.todo.id);
+    todo.destroyRecord();
+  }
 }

@@ -5,3 +5,4 @@
   {{on 'input' this.toggleTodo}}
 />
 <label for='todo-{{@todo.id}}'>{{@todo.task}}</label>
+<button type='button' {{on 'click' this.deleteTodo}}>Delete</button>

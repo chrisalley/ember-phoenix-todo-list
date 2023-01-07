@@ -31,4 +31,11 @@ defmodule BackendWeb.Api.V1.TodoController do
       render(conn, "show.json", todo: todo)
     end
   end
+
+  def delete(conn, %{"id" => id}) do
+    todo = Todos.get_todo!(id)
+    with {:ok, %Todo{}} <- Todos.delete_todo(todo) do
+      send_resp(conn, :no_content, "")
+    end
+  end
 end
