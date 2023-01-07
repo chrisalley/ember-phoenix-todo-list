@@ -1,4 +1,4 @@
-defmodule Backend.Todo do
+defmodule Backend.Todos.Todo do
   use Ecto.Schema
   import Ecto.Changeset
 
