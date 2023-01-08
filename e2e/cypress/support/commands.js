@@ -23,3 +23,14 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("cleanUpTodo", (todoText) => {
+  cy.get("ul")
+    .contains(todoText)
+    .siblings()
+    .contains("Delete")
+    .click()
+    .then(($myElement) => {
+      cy.get("ul").contains(todoText).should("not.exist");
+    });
+});
